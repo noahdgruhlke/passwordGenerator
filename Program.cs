@@ -8,17 +8,19 @@ class PasswordGenerator
 
         var passLength = new string(Console.ReadLine());
 
-        int returnCase = new Int(caseParameter);
+        int returnCase = CaseParameter();
 
         return;
     }
 
-    static int caseParameter(int parameter)
+    static int CaseParameter()
     {
         Console.WriteLine("Great! Does your password need special case?");
         Console.WriteLine("1. Uppercase");
         Console.WriteLine("2. Lowercase");
         Console.WriteLine("3. Mix");
+
+        int parameter = 0;
 
         while (true)
         {
@@ -37,6 +39,13 @@ class PasswordGenerator
                 parameter = 3;
                 break;
             }
+            else 
+            {
+                parameter = 0;
+                break; 
+            }
+
+            return parameter;
         }
     }
 }
